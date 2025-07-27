@@ -1,4 +1,4 @@
-import { Avatar , Center, Text} from '@mantine/core'
+import { Avatar , Center, Stack, Text} from '@mantine/core'
 import React, { useEffect, useState } from 'react'
 import Service from '../utils/http';
 
@@ -16,8 +16,10 @@ export default function Profile() {
     },[])
     return (
         <div>
-            <Center><Avatar src={profileData?.avatar} alt="it's me" size="xl" variant="transparent"/></Center>
-            <Text ta="center" ><strong>Name : </strong>{profileData?.name}</Text>
+            <Stack k h={200} bg="var(--mantine-color-body)" align="Center" justify="center" gap="md"></Stack>
+            <Center><Avatar src={profileData?.avatar} alt="it's me" size="xxl" variant="transparent"/></Center>
+             <br></br>
+            <Text ta="center"><strong>Name : </strong>{profileData?.name}</Text>
             <Text ta="center"><strong>Email Id :</strong>{profileData?.email}</Text>
             <Text ta="center"><strong>User Id :</strong>{profileData?._id}</Text>
             <Text ta="center"><strong>Created On :</strong>{profileData?.createdAt}</Text>
